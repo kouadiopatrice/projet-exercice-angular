@@ -1,0 +1,39 @@
+nav {
+    position: fixed;
+    width: 100%;
+    .navbar-nav {
+        display: flex;
+        color: #000;
+        flex: 1 1 auto;
+        flex-flow: row wrap;
+        justify-content: center;
+        .nav-item {
+            color: #000;
+            @media (max-width: 600px) {
+                display: none;
+            }
+        }
+        .nav-link {
+            color: rgb(107, 102, 102);
+        }
+        .mat-menu {
+            background-color: aqua;
+            button {
+                .nav-link {
+                    color: rgb(107, 102, 102);
+                }
+            }
+        }
+    }
+    span {
+        .btn-danger {
+            color: #fff;
+            box-shadow: 0px 0px 10px rgb(177, 174, 174);
+            background-color: coral;
+            border-color: coral;
+            border-radius: 20px;
+            width: 120px;
+            margin-right: 30px;
+        }
+    }
+}

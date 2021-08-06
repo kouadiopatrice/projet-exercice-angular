@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="h1-product">Bring everiyone together to build better products</h1>
+            <p>
+                Your challenge is to build out this landing page and get it looking as close to the design as possible. You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+            </p>
+            <button type="button" class="btn btn-danger btn-product">get start</button>ß
+        </div>
+        <div class="col-md-6 illustration">
+            <img src="/assets/images/illustration-intro.svg" alt="logo akilcab">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="h1-product"> What's different about Manage? </h1>
+                <p>
+                    Your challenge is to build out this landing page and get it looking as close to the design as possible. You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+                </p>
+            </div>
+            <div class="col-md-6 ">
+                <div col-md-12 class="right-Bring ">
+                    <ol>
+                        <li> company-wide progress</li>
+                        <p>
+                            Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc. Want some support on the challenge? Join our Slack community and ask questions
+                            in the help channel.
+                        </p>
+                        <li>Advanced build-in reports</li>
+                        <p>
+                            Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc. Want some support on the challenge? Join our Slack community and ask questions
+                            in the help channel.
+                        </p>
+                        <li>Everything you need in one place</li>
+                        <p>
+                            Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc. Want some support on the challenge? Join our Slack community and ask questions
+                            in the help channel.
+                        </p>
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+        <h1 class=" "> what they've said</h1>
+    </div>
+    <div class="row person-team ">
+        <mdb-carousel [animation]=" 'slide' ">
+            <mdb-carousel-item>
+                <div class="col-mx-12 col-sm-6  col-md-4 " *ngFor="let infoPers of person; let  i = index ">
+                    <img src="{{infoPers.avatar}} " alt=" ">
+                    <h4>{{infoPers.name}}</h4>
+                    <p>
+                        {{infoPers.message}}
+                    </p>
+                </div>
+            </mdb-carousel-item>
+        </mdb-carousel>
+        <button type="button " class="btn btn-danger ">get start</button>
+    </div>
+
+</div>

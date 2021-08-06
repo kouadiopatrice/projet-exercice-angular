@@ -1,0 +1,29 @@
+.container-fluid {
+    background-color: coral;
+    height: 200px;
+    width: 100%;
+    .row {
+        .col-md-10 {
+            color: #fff;
+            h4 {
+                margin-left: 100px;
+                margin-top: 80px;
+            }
+        }
+        .col-md-2 {
+            button {
+                margin-top: 80px;
+                color: coral;
+                width: 130px;
+                border-radius: 20px;
+                padding: 10px;
+                @media (max-width: 700px) {
+                    background-color: coral;
+                    color: #fff;
+                    position: relative;
+                    left: 40%;
+                }
+            }
+        }
+    }
+}

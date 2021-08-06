@@ -1,0 +1,73 @@
+.container-fluid {
+    width: 100%;
+    .row {
+        .col-md-6 {
+            .right-Bring {
+                margin-bottom: 50px;
+            }
+            ol {
+                color: #000;
+                font-size: 25px;
+                list-style: decimal-leading-zero;
+                font-weight: 700;
+                li {
+                    &::marker {
+                        background-color: brown;
+                        color: coral;
+                    }
+                }
+                p {
+                    color: gray;
+                    font-size: 16px;
+                }
+            }
+            .btn-product {
+                position: relative;
+                left: 0;
+            }
+        }
+        h1 {
+            text-align: center;
+        }
+        .h1-product {
+            text-align: start;
+        }
+        .col-md-3 {
+            background-color: whitesmoke;
+            margin-left: 20px;
+            text-align: center;
+        }
+        .col-md-4 {
+            background-color: whitesmoke;
+            margin-left: 20px;
+            text-align: center;
+            padding: auto;
+            padding-right: 75px;
+            padding-left: 75px;
+        }
+        button {
+            position: relative;
+            margin-top: 40px;
+            left: 50%;
+            width: 120px;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            background-color: coral;
+        }
+    }
+    .person-team {
+        margin-top: 40px;
+        mdb-carousel {
+            .carousel {
+                .carousel-inner {
+                    z-index: -1;
+                    @media (max-width: 700px) {
+                        .carousel-item.active {
+                            display: inline-flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
