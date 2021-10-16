@@ -1,0 +1,63 @@
+.sunnyside-navbar {
+    width: 100%;
+    .example-spacer {
+        width: 50%;
+    }
+    mat-toolbar {
+        background-color: deepskyblue;
+        color: whitesmoke;
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            padding-top: 20px;
+            li {
+                margin-top: 20px;
+                margin: 20px;
+                a {
+                    color: whitesmoke;
+                    background-color: deepskyblue;
+                }
+            }
+            li::marker {
+                color: deepskyblue;
+                display: none;
+            }
+            @media screen and (max-width: 1340px) {
+                padding-top: 20px;
+                width: 100%;
+            }
+        }
+        .side-menu {
+            text-align: center;
+            background-color: whitesmoke;
+            width: 100px;
+            border-radius: 20px;
+            a {
+                color: #000;
+                margin-left: 10px;
+            }
+        }
+        a {
+            color: #000;
+            background-color: whitesmoke;
+            margin-left: 20px;
+            border-radius: 20px;
+            width: 119px;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    }
+    mat-sidenav-container {
+        font-size: 14px;
+        mat-sidenav {
+            .resp-sidenav {
+                a {
+                    text-decoration: none;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

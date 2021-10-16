@@ -7,9 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+ listSelected?:string;
+
+  navbarlist = [{
+      listName:"Pricing",
+      url:"/landing"
+    },
+    {
+      listName:"Product pages",
+      url:"/pages"
+    },
+    {
+      listName:"About Sunnyside",
+      url:"/sunnysides"
+    },
+    {
+      listName:"Careers",
+      url:"/careers"
+    },
+    {
+      listName:"Community",
+      url:" "
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(value:string){
+   this.listSelected = value;
   }
 
 }

@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <app-navbar></app-navbar>
+    </div>
+    <p>cores works!</p>
+    <input #phone placeholder="phone number" />
+
+    <!-- lots of other elements -->
+
+    <!-- phone refers to the input element; pass its `value` to an event handler -->
+    <button (click)="callPhone(phone.value)">Call</button>
+    <p> {{phone.value}}</p>
+    <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+        <div>
+            <label for="name">Name <input class="form-control" name="name" ngModel required />
+             </label>
+        </div>
+
+        <div>
+            <label for="lastName">Last name <input class="form-control" name="lastName" ngModel required />
+            </label>
+        </div>
+
+        <button type="submit">Submit</button>
+        <p>{{itemForm.value.lastName}}</p>
+    </form>
+
+    <div [hidden]="!itemForm.form.valid">
+        <p>{{submitMessage}}</p>
+    </div>
+</div>

@@ -9,6 +9,7 @@ nav {
         justify-content: center;
         .nav-item {
             color: #000;
+            margin-left: 10px;
             @media (max-width: 600px) {
                 display: none;
             }
@@ -22,6 +23,12 @@ nav {
                 .nav-link {
                     color: rgb(107, 102, 102);
                 }
+            }
+        }
+        li.selected {
+            a {
+                color: coral;
+                background-color: rgb(172, 147, 147);
             }
         }
     }

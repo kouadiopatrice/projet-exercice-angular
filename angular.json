@@ -23,7 +23,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/frontendmentormanage",
+                        "outputPath": "dist/frontendmentormanage/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -61,7 +61,12 @@
                                 "replace": "src/environments/environment.ts",
                                 "with": "src/environments/environment.prod.ts"
                             }],
-                            "outputHashing": "all"
+                            "outputHashing": "all",
+                            "optimization": {
+                                "scripts": true,
+                                "styles": true,
+                                "fonts": false
+                            }
                         },
                         "development": {
                             "buildOptimizer": false,
@@ -110,6 +115,47 @@
                         ],
                         "scripts": []
                     }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/frontendmentormanage/server",
+                        "main": "src/main.server.ts",
+                        "tsConfig": "tsconfig.server.json",
+                        "inlineStyleLanguage": "scss"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.prod.ts"
+                            }]
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "app-shell": {
+                    "builder": "@angular-devkit/build-angular:app-shell",
+                    "options": {
+                        "route": "shell"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "frontendmentormanage:build:production",
+                            "serverTarget": "frontendmentormanage:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "frontendmentormanage:build:development",
+                            "serverTarget": "frontendmentormanage:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }

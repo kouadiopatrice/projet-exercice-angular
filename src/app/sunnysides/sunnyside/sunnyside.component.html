@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div>
+        <app-nav-bar-sunny></app-nav-bar-sunny>
+    </div>
+    <div class="flex-container" fxLayout="row">
+        <div class="child-create" fxFlex>
+            <h1>WE ARE CREATIVES </h1>
+        </div>
+    </div>
+    <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+        <div class="child2" fxFlex="50" fxFlex.sm>
+            <h1>Transform your brand</h1>
+            <p>
+                We are a full-service creative agency specializing in helpping brands grow fast. Engage your client through compelling visuals that do most of the marketing for you.
+            </p>
+            <h2>LEARN MORE </h2>
+        </div>
+        <div class="child3" fxFlex="50" fxFlex.sm>
+        </div>
+    </div>
+    <div class="flex-container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="child4" fxFlex="50">
+        </div>
+        <div class="child5" fxFlex="50">
+            <h1> Stand out to the right audience</h1>
+            <p> using a collaboratuve formula of designers, resaerchers,photographer, and copywriters we'll build and extend your brand in digital places.
+            </p>
+            <h2>LEARN MORE </h2>
+        </div>
+    </div>
+    <div class="flex-container text-fond-img" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="child6" fxFlex="50">
+            <div class="contant-child">
+                <h1>Graphic Design </h1>
+                <p>
+                    Graet design makes you memorable. We deliver artwork that undescorres your brand message and capture optential clients' attention.
+                </p>
+            </div>
+
+        </div>
+        <div class="child7" fxFlex="50">
+            <div class="contant-child">
+                <h1> photography</h1>
+                <p>
+                    Increase your credebility by getting the most stunning, high-quality photos that improve business image
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="header-client-testimo">CLIENT TESTIMONIALS </h1>
+    <div class="flex-container container-client-testimo" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="child-client-testimo" fxFlex *ngFor="let client of client_testimonials">
+            <div class="info-client">
+                <img src="{{client.avatar}} " alt=" ">
+
+                <p>{{client.message}}</p>
+            </div>
+            <div class="info-client">
+                <h1>{{client.name}} </h1>
+                <p class="role">{{client.role}} </p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="autre-block1" fxFlex="25"></div>
+        <div class="autre-block2" fxFlex="25"></div>
+        <div class="autre-block3" fxFlex="25"></div>
+        <div class="autre-block4" fxFlex="25"></div>
+    </div>
+    <div class="flex-container" fxLayout="row">
+        <div class="footer" fxFlex>
+            <h1> Sunnyside</h1>
+            <p>
+                <span> About</span>
+                <span> Services</span>
+                <span> Projects</span>
+                <span class="callBack-landing-page"><a [routerLink]="['/landing']"> callback of landing page</a> </span>
+            </p>
+
+        </div>
+    </div>
+
+</div>

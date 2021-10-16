@@ -1,0 +1,60 @@
+<div class="landing-manage container-fluid">
+    <!-- <div>
+        <app-navbar></app-navbar>
+    </div> -->
+    <div class="landing-header">
+        <app-landing></app-landing>
+    </div>
+
+    <!-- <div class="landing-container">
+        <app-cores></app-cores>
+    </div> -->
+
+    <div class="landingteam-work">
+        <app-cores></app-cores>
+    </div>
+
+    <div class="landing-footer">
+        <app-footers></app-footers>
+    </div>
+    pages lazy loading
+    <h1> structural directive here</h1>
+
+    <p>
+        The condition is currently
+        <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
+        <button (click)="condition = !condition" [ngClass]="{ 'a': condition, 'b': !condition }">
+        Toggle condition to {{condition ? 'false' : 'true'}}
+      </button>
+    </p>
+
+    <p *appUnless="condition" class="unless a">
+        (A) This paragraph is displayed because the condition is false.
+    </p>
+
+    <p *appUnless="!condition" class="unless b">
+        (B) Although the condition is true, this paragraph is displayed because appUnless is set to true .
+    </p>
+
+    <div>
+        <h1> angular ng-template</h1>
+
+        <ng-container *ngIf="lessons">
+            <div class="lesson" *ngFor="let lesson of lessons">
+                <div class="lesson-detail">
+                    {{lesson|json}}
+                </div>
+            </div>
+
+        </ng-container>
+
+        <ng-template [ngIf]="lessons" [ngIfElse]="loading">
+            <div class="lessons-list">
+                they lessons 😃 : {{lessons|json}}
+            </div>
+        </ng-template>
+        <ng-template #loading>
+            <div> there are not lesson</div>
+        </ng-template>
+    </div>
+</div>

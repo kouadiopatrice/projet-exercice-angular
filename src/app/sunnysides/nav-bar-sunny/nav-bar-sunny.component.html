@@ -1,0 +1,32 @@
+<div class="sunnyside-navbar container-fluid">
+    <mat-toolbar color="deepskyblue">
+        <span>Sunnyside</span>
+        <span class="example-spacer"></span>
+
+        <ul fxShow="true" fxHide.lt-md="true">
+            <li *ngFor="let item of navbarListe ">
+                <a routerLink="{{item.url}}" mat-button>{{item.textList}}</a>
+            </li>
+        </ul>
+
+        <div class="side-menu" fxShow="true" fxHide.gt-sm="true">
+            <a routerLink="/sunnysides" (click)="sidenav.toggle()">Menu</a>
+        </div>
+
+        <a routerLink="/sunnysides" mat-button>CONTACT</a>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container fxFlexFill class="example-container">
+        <mat-sidenav #sidenav fxLayout="column" mode="side" opened="false">
+            <div class="resp-sidenav" fxLayout="column">
+                <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+                <a routerLink="/sunnysides" mat-button>About</a>
+                <a routerLink="/sunnysides" mat-button>Services</a>
+                <a routerLink="/sunnysides" mat-button>projects</a>
+            </div>
+        </mat-sidenav>
+        <!-- <mat-sidenav-content fxFlexFill> Main content</mat-sidenav-content> -->
+    </mat-sidenav-container>
+
+</div>
