@@ -28,6 +28,8 @@ import { LandingComponent } from './landing/landing.component';
 import { FilterPipe } from './filter.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { RouterModule } from '@angular/router';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,9 @@ import { RouterModule } from '@angular/router';
     CarouselModule,
     MatGridListModule,
     RouterModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
     // MatSidenavModule
   ],
   providers: [],

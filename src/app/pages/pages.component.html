@@ -18,43 +18,91 @@
         <app-footers></app-footers>
     </div>
     pages lazy loading
-    <h1> structural directive here</h1>
+    <h1>structural directive here</h1>
 
     <p>
         The condition is currently
-        <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
-        <button (click)="condition = !condition" [ngClass]="{ 'a': condition, 'b': !condition }">
-        Toggle condition to {{condition ? 'false' : 'true'}}
-      </button>
-    </p>
+        <span [ngClass]="{ a: !condition, b: condition, unless: true }">{{
+      condition
+    }}</span
+    >.
+    <button
+      (click)="condition = !condition"
+      [ngClass]="{ a: condition, b: !condition }"
+    >
+      Toggle condition to {{ condition ? "false" : "true" }}
+    </button>
+  </p>
 
-    <p *appUnless="condition" class="unless a">
-        (A) This paragraph is displayed because the condition is false.
-    </p>
+  <p *appUnless="condition" class="unless a">
+    (A) This paragraph is displayed because the condition is false.
+  </p>
 
-    <p *appUnless="!condition" class="unless b">
-        (B) Although the condition is true, this paragraph is displayed because appUnless is set to true .
-    </p>
+  <p *appUnless="!condition" class="unless b">
+    (B) Although the condition is true, this paragraph is displayed because
+    appUnless is set to true .
+  </p>
 
-    <div>
-        <h1> angular ng-template</h1>
+  <div>
+    <h1>angular ng-template</h1>
 
-        <ng-container *ngIf="lessons">
-            <div class="lesson" *ngFor="let lesson of lessons">
-                <div class="lesson-detail">
-                    {{lesson|json}}
-                </div>
-            </div>
+    <ng-container *ngIf="lessons">
+      <div class="lesson" *ngFor="let lesson of lessons">
+        <div class="lesson-detail">
+          {{ lesson | json }}
+        </div>
+      </div>
+    </ng-container>
 
-        </ng-container>
+    <ng-template [ngIf]="lessons" [ngIfElse]="loading">
+      <div class="lessons-list">they lessons 😃 : {{ lessons | json }}</div>
+    </ng-template>
+    
+    <ng-template #loading>
+      <div>there are not lesson</div>
+    </ng-template>
+  </div>
 
-        <ng-template [ngIf]="lessons" [ngIfElse]="loading">
-            <div class="lessons-list">
-                they lessons 😃 : {{lessons|json}}
-            </div>
-        </ng-template>
-        <ng-template #loading>
-            <div> there are not lesson</div>
-        </ng-template>
+  <div *ngIf ="lessons else loadings">
+      <div>
+          <p>
+              there are the lessons
+          </p>
+      </div>
+
+  </div>
+  <ng-template #loadings>
+      <div>
+         <p>
+             
+         </p>  
+          <button class="tab-button" (click)="login()">{{ loginText }}</button>
+          <button class="tab-button" (click)="signUp()">{{ signUpText }}</button>
+      </div>
+  </ng-template>
+  
+  <div class="Angular-ViewChild">
+    <h2>Utilisatisation de viewChild en Angular </h2>
+     <div>
+       <span appShark> fin! </span>
+        <p>
+            <input #someInput placeholder="Your favorite sea creature">
+        </p>
+</div>
+<app-careers>
+
+</app-careers>
+</div>
+<div class="angular-animations">
+    <h2> angular animations </h2>
+
+    <nav>
+        <button (click)="toggle()">Toggle Open/Close</button>
+    </nav>
+
+    <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+        <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
     </div>
+
+</div>
 </div>

@@ -8,6 +8,9 @@ export class OutZoneWatchingService {
     this.ngZone.onStable.subscribe(this.onZoneStable);
     this.ngZone.onUnstable.subscribe(this.onZoneUnstable);
     this.ngZone.onError.subscribe(this.onZoneError);
+    this.reviewSetTimeout();
+    console.log('onMicrotaskEmpty', ngZone.onMicrotaskEmpty);
+    console.log('zone root', ngZone);
   }
   onZoneStable() {
     console.log('We are stable');
@@ -20,5 +23,11 @@ export class OutZoneWatchingService {
       'Error',
       error instanceof Error ? error.message : error.toString()
     );
+  }
+
+  reviewSetTimeout() {
+    setTimeout(() => {
+      console.log('hey ,I am zone !!!');
+    }, 200);
   }
 }
